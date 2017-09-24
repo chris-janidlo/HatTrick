@@ -9,4 +9,8 @@ public struct CardQualities {
 		Rank = rank;
 	}
 
+	public override string ToString() {
+		return Rank + " of " + Suit;
+	}
+
 }

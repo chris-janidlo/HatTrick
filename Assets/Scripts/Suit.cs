@@ -66,5 +66,9 @@ public struct Suit {
 	public static Suit B { get {
 		return new Suit(SuitColor.black, SuitColor.white, SuitColor.green);
 	} }
+
+	public override string ToString () {
+		return root.ToString() + ", " + third.ToString() + ", " + fifth.ToString();
+	}
 	
 }
