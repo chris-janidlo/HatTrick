@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a0941badb9d4be98eee7e38bcb273f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationLength: 2
+  AnimationLength: 1
   Animating: 0
   CardPrefab: {fileID: 1522897597026678, guid: b53895935ce4d47659c298d67a98c241, type: 2}
 --- !u!1001 &710974595
@@ -547,7 +547,7 @@ Prefab:
     - target: {fileID: 224671237893513854, guid: c191082e5862a43bb95f498b04898c32,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224671237893513854, guid: c191082e5862a43bb95f498b04898c32,
         type: 2}
@@ -603,12 +603,6 @@ Prefab:
       propertyPath: m_Name
       value: HandRenderer for player one
       objectReference: {fileID: 0}
-    - target: {fileID: 114628731680453400, guid: c191082e5862a43bb95f498b04898c32,
-        type: 2}
-      propertyPath: CardPrefab
-      value: 
-      objectReference: {fileID: 1522897597026678, guid: b53895935ce4d47659c298d67a98c241,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c191082e5862a43bb95f498b04898c32, type: 2}
   m_IsPrefabParent: 0
