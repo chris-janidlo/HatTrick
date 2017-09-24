@@ -5,7 +5,7 @@ using UnityEngine;
 //this partial section deals with drawing mechanics
 public partial class GameManager : MonoBehaviour {
 
-	public void DrawCard (Player owner, DrawPoolType pool) {
+	public void DrawCard (DrawPoolType pool) {
 		CardQualities card = new CardQualities();
 		switch (pool) {
 			case DrawPoolType.random:
@@ -18,15 +18,8 @@ public partial class GameManager : MonoBehaviour {
 				card = Utilities.Choose(GameState.PlayerTwo.DrawPool);
 				break;
 		}
-		DrawAnimator.Singleton.Animate(card, owner);
-		if (owner == Player.one)
-			GameState.PlayerOne.Hand.Add(card);
-		else
-			GameState.PlayerTwo.Hand.Add(card);
-	}
-
-	public void DrawCard (DrawPoolType pool) {
-		DrawCard(GameState.CurrentPlayer, pool);
+		DrawAnimator.Singleton.Animate(card);
+		GameState.CurrentPlayer.Hand.Add(card);
 	}
 
 	public void DrawRandom () {

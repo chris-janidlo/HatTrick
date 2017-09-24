@@ -7,21 +7,26 @@ public class GameState {
 	public GameProperties GameProperties { get; private set; }
 	public PlayerState PlayerOne { get; private set; }
 	public PlayerState PlayerTwo { get; private set; }
-	public Player CurrentPlayer { get; private set; }
+	public Player CurrentPlayerType { get; private set; }
+	public PlayerState CurrentPlayer { get {
+		if (CurrentPlayerType == Player.one)
+			return PlayerOne;
+		else
+			return PlayerTwo;
+	} }
 
-	// Use this for initialization
 	public GameState (GameProperties gameProperties) {
 		GameProperties = gameProperties;
 		PlayerOne = new PlayerState();
 		PlayerTwo = new PlayerState();
-		CurrentPlayer = Player.one;
+		CurrentPlayerType = Player.one;
 	}
 
 	public void SwitchTurn () {
-		if (CurrentPlayer == Player.one)
-			CurrentPlayer = Player.two;
+		if (CurrentPlayerType == Player.one)
+			CurrentPlayerType = Player.two;
 		else
-			CurrentPlayer = Player.one;
+			CurrentPlayerType = Player.one;
 	}
 	
 }
