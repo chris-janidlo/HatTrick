@@ -51,21 +51,13 @@ public class HandRenderer : MonoBehaviour {
 			Destroy(card);
 		currentPlayerHandDrawing = new List<GameObject>();
 
-		var hand = GameManager.Singleton.GameState.CurrentPlayer.Hand; //cache hand list, not because it's expensive, but because it's hard to type
-		float cardHorOffset = friendlyArea.sizeDelta.x / hand.Count; //offset between the center of each card
-
-		float cardHorizontalPosition = -((hand.Count / 2) * cardHorOffset);
-		if (hand.Count % 2 == 0)
-			cardHorizontalPosition += .5f * cardHorOffset;
+		var hand = GameManager.Singleton.GameState.CurrentPlayer.Hand;
 		
 		//make the new hand
 		for (int i = 0; i < hand.Count; i++ ) {
 			var tempCard = Instantiate(CardPrefab, parent:friendlyArea);
-			tempCard.transform.localPosition = new Vector3(cardHorizontalPosition, 0);
 			tempCard.GetComponent<CardVisuals>().Initialize(hand[i]);
 			currentPlayerHandDrawing.Add(tempCard);
-
-			cardHorizontalPosition += cardHorOffset;
 		}
 
 		needsToUpdate = false;
