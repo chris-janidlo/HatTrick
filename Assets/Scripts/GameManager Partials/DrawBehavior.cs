@@ -19,7 +19,7 @@ public partial class GameManager : MonoBehaviour {
 				break;
 		}
 		DrawAnimator.Singleton.Animate(card);
-		CurrentPlayer.Hand.Add(card);
+		CurrentPlayerState.Hand.Add(card);
 	}
 
 	public void DrawRandom () {

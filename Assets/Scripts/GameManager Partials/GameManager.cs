@@ -7,14 +7,14 @@ public partial class GameManager : MonoBehaviour {
 
 	public static GameManager Singleton;
 	public GameProperties GameProperties { get; private set; }
-	public PlayerState PlayerOne { get; private set; }
-	public PlayerState PlayerTwo { get; private set; }
+	public PlayerState PlayerOneState { get; private set; }
+	public PlayerState PlayerTwoState { get; private set; }
 	public Player CurrentPlayerType { get; private set; }
-	public PlayerState CurrentPlayer { get {
+	public PlayerState CurrentPlayerState { get {
 		if (CurrentPlayerType == Player.one)
-			return PlayerOne;
+			return PlayerOneState;
 		else
-			return PlayerTwo;
+			return PlayerTwoState;
 	} }
 
 	public void SwitchTurn () {
@@ -31,8 +31,8 @@ public partial class GameManager : MonoBehaviour {
 
 	public void Initialize (GameProperties gameProperties) {
 		GameProperties = gameProperties;
-		PlayerOne = new PlayerState();
-		PlayerTwo = new PlayerState();
+		PlayerOneState = new PlayerState();
+		PlayerTwoState = new PlayerState();
 		CurrentPlayerType = Player.one;
 	}
 
