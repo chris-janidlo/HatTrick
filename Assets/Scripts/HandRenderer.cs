@@ -39,7 +39,7 @@ public class HandRenderer : MonoBehaviour {
 
 	//visually refreshes the hand of the current player
 	private void redrawCurrentHand () {
-		if (GameManager.Singleton.GameState.CurrentPlayerType == FriendlyPlayer)
+		if (GameManager.Singleton.CurrentPlayerType == FriendlyPlayer)
 			redrawPlayer();
 		else
 			redrawOpponent();
@@ -51,7 +51,7 @@ public class HandRenderer : MonoBehaviour {
 			Destroy(card);
 		currentPlayerHandDrawing = new List<GameObject>();
 
-		var hand = GameManager.Singleton.GameState.CurrentPlayer.Hand;
+		var hand = GameManager.Singleton.CurrentPlayer.Hand;
 		
 		//make the new hand
 		for (int i = 0; i < hand.Count; i++ ) {

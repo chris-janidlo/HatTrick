@@ -9,17 +9,17 @@ public partial class GameManager : MonoBehaviour {
 		CardQualities card = new CardQualities();
 		switch (pool) {
 			case DrawPoolType.random:
-				card = new CardQualities(Suit.IntToSuit(Random.Range(1,8)), Random.Range(1, GameState.GameProperties.TrickLength+1));
+				card = new CardQualities(Suit.IntToSuit(Random.Range(1,8)), Random.Range(1, GameProperties.TrickLength+1));
 				break;
 			case DrawPoolType.PlayerOne:
-				card = Utilities.Choose(GameState.PlayerOne.DrawPool);
+				card = Utilities.Choose(PlayerOneState.DrawPool);
 				break;
 			case DrawPoolType.PlayerTwo:
-				card = Utilities.Choose(GameState.PlayerTwo.DrawPool);
+				card = Utilities.Choose(PlayerTwoState.DrawPool);
 				break;
 		}
 		DrawAnimator.Singleton.Animate(card);
-		GameState.CurrentPlayer.Hand.Add(card);
+		CurrentPlayer.Hand.Add(card);
 	}
 
 	public void DrawRandom () {
