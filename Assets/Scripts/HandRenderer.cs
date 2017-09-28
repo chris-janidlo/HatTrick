@@ -51,7 +51,7 @@ public class HandRenderer : MonoBehaviour {
 			Destroy(card);
 		currentPlayerHandDrawing = new List<GameObject>();
 
-		var hand = GameManager.Singleton.CurrentPlayer.Hand;
+		var hand = GameManager.Singleton.CurrentPlayerState.Hand;
 		
 		//make the new hand
 		for (int i = 0; i < hand.Count; i++ ) {

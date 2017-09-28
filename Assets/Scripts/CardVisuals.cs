@@ -12,15 +12,15 @@ public class CardVisuals : MonoBehaviour,
 	public Vector2 HilightScale; //size when mousing over in hand
 	public Vector2 LolightScale; //size when not mousing over
 
-	private Text placeholder;
+	private Graphic placeholder;
 	private Vector2 posCache;
 
 	void Awake () {
-		placeholder = GetComponentInChildren<Text>();
+		placeholder = GetComponent<Text>();
 	}
 
 	public void Initialize (CardQualities quanta) {
-		placeholder.text = quanta.Rank + "\n" + quanta.Suit.root + "\n" + quanta.Suit.third + "\n" + quanta.Suit.fifth;
+		((Text) placeholder).text = quanta.Rank + "\n" + quanta.Suit.root + "\n" + quanta.Suit.third + "\n" + quanta.Suit.fifth;
 	}
 
 	public void OnPointerEnter (PointerEventData eventData) {
