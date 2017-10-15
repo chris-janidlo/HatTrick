@@ -36,16 +36,21 @@ public partial class GameManager : MonoBehaviour {
 		CurrentPlayerType = Player.one;
 	}
 
+	PlayerState getPlayerState (Player player) {
+		if (player == Player.one) return PlayerOneState;
+		else return PlayerTwoState;
+	}
+
 }
 
 public class PlayerState {
 	
-	public List<CardQualities> DrawPool { get; set; }
-	public List<CardQualities> Hand { get; set; }
+	public Dictionary<int, CardQualities> DrawPool { get; set; }
+	public Dictionary<int, CardQualities> Hand { get; set; }
 
 	public PlayerState () {
-		DrawPool = new List<CardQualities>();
-		Hand = new List<CardQualities>();
+		DrawPool = new Dictionary<int, CardQualities>();
+		Hand = new Dictionary<int, CardQualities>();
 	}
 
 }

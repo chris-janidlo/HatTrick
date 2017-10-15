@@ -528,7 +528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationLength: 1
   Animating: 0
-  CardPrefab: {fileID: 1522897597026678, guid: b53895935ce4d47659c298d67a98c241, type: 2}
+  CardPrefab: {fileID: 1092395997564958, guid: b53895935ce4d47659c298d67a98c241, type: 2}
 --- !u!1001 &710974595
 Prefab:
   m_ObjectHideFlags: 0
@@ -640,6 +640,12 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 130
       objectReference: {fileID: 0}
+    - target: {fileID: 114628731680453400, guid: c191082e5862a43bb95f498b04898c32,
+        type: 2}
+      propertyPath: CardPrefab
+      value: 
+      objectReference: {fileID: 1092395997564958, guid: b53895935ce4d47659c298d67a98c241,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c191082e5862a43bb95f498b04898c32, type: 2}
   m_IsPrefabParent: 0
