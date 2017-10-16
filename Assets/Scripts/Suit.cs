@@ -1,4 +1,4 @@
-using System;
+using UnityEngine;
 //defines suits and their associations with colors
 
 public enum SuitColor {
@@ -13,10 +13,11 @@ public enum SuitColor {
 
 //Suit is almost like an enum: there are only 7 possible values accessible from the outside, which are the properties at the end of the definition
 //it isn't an enum, however, in that each value is a struct with three publically accessible values
+[System.Serializable]
 public struct Suit {
-	public SuitColor root { get; private set; } //color of the chord where this note is the root
-	public SuitColor third { get; private set; } //color of the chord where this note is the third
-	public SuitColor fifth { get; private set; } //color of the chord where this note is the fifth
+	public SuitColor root; //color of the chord where this note is the root
+	public SuitColor third; //color of the chord where this note is the third
+	public SuitColor fifth; //color of the chord where this note is the fifth
 
 	private Suit (SuitColor _root, SuitColor _third, SuitColor _fifth) {
 		root = _root;
@@ -41,8 +42,12 @@ public struct Suit {
 			case 7:
 				return Suit.B;
 			default:
-				throw new ArgumentException();
+				throw new System.ArgumentException();
 		}
+	}
+
+	public static Suit RandomSuit () {
+		return IntToSuit(Random.Range(1, 8));
 	}
 
 	public static Suit C { get {

@@ -1,4 +1,6 @@
-﻿//simple container for card suit and rank (note and length)
+﻿using UnityEngine;
+// simple container for card suit and rank (note and length)
+[System.Serializable]
 public struct CardQualities {
 
 	public Suit Suit;
@@ -11,6 +13,12 @@ public struct CardQualities {
 
 	public override string ToString() {
 		return Rank + " of " + Suit;
+	}
+
+	public static CardQualities RandomCard (int rankMin, int rankMax) {
+		int rank = Random.Range(rankMin, rankMax + 1);
+		Suit suit = Suit.RandomSuit();
+		return new CardQualities(suit, rank);
 	}
 
 }
