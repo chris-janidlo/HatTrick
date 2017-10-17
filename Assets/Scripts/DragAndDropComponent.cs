@@ -38,7 +38,7 @@ public class DragAndDropComponent : MonoBehaviour,
 		transform.position = eventData.position;
 	}
 
-	// TODO make this animated instead of instantaneous
+	// TODO: make this animated instead of instantaneous
 	public void OnEndDrag (PointerEventData eventData) {
 		transform.position = posCache;
 		Dragging = false;

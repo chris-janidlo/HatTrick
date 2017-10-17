@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// used for draw pools and hands
 public class CardPool : MonoBehaviour {
 
 	public List<CardQualities> Pool;
