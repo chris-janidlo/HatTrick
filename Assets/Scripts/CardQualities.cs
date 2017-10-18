@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+
+namespace HatTrick {
+
 // simple container for card suit and rank (note and length)
 [System.Serializable]
 public struct CardQualities {
@@ -20,5 +23,7 @@ public struct CardQualities {
 		Suit suit = Suit.RandomSuit();
 		return new CardQualities(suit, rank);
 	}
+
+}
 
 }

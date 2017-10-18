@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+namespace HatTrick {
+
+
 // put this on an object to enable mouse dragging and dropping
 public class DragAndDropComponent : MonoBehaviour, 
 	IPointerEnterHandler, IPointerExitHandler,
@@ -43,5 +46,7 @@ public class DragAndDropComponent : MonoBehaviour,
 		transform.position = posCache;
 		Dragging = false;
 	}
+
+}
 
 }

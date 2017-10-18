@@ -1,6 +1,8 @@
 using UnityEngine;
 //defines suits and their associations with colors
 
+namespace HatTrick {
+
 public enum SuitColor {
 	yellow,
 	blue,
@@ -76,4 +78,6 @@ public struct Suit {
 		return root.ToString() + ", " + third.ToString() + ", " + fifth.ToString();
 	}
 	
+}
+
 }
