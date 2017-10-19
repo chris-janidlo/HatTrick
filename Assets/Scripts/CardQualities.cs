@@ -6,8 +6,8 @@ namespace HatTrick {
 [System.Serializable]
 public class CardQualities {
 
-	public Suit Suit;
-	public int Rank;
+	public readonly Suit Suit;
+	public readonly int Rank;
 
 	public CardQualities (Suit suit, int rank) {
 		Suit = suit;
