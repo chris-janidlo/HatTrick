@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
 
@@ -9,13 +10,14 @@ namespace HatTrick {
 // TODO: implement procedure to make this immutable after a certain point (ie, for sidebar usage)
 public class Trick : MonoBehaviour {
 
-	public ReadOnlyCollection<CardQualities> Measure {
-		get { return Array.AsReadOnly(measure); }
+	public ReadOnlyDictionary<Range, CardQualities> OccupiedPositions {
+		get { return new ReadOnlyDictionary<Range, CardQualities>(occupiedPositions); }
 	}
 
 	private CardQualities[] measure; // each position here holds the corresponding card in pool, for however long it is, or null
+	private Dictionary<Range, CardQualities> occupiedPositions; // version of the data in measure that's easier to render
 
-	public Trick (int length) {
+	public void Initialize (int length) {
 		measure = new CardQualities[length];
 		for (int i = 0; i < length; i++)
 			measure[length] = null;
@@ -31,6 +33,7 @@ public class Trick : MonoBehaviour {
 			newSection[i] = card;
 		}
 		Array.Copy(newSection, 0, measure, startPosition, card.Rank);
+		occupiedPositions.Add(new Range(startPosition, startPosition + card.Rank), card);
 		return true;
 	}
 
@@ -47,13 +50,14 @@ public class Trick : MonoBehaviour {
 	}
 
 	/// Returns the card at position, and removes it in the process.
-	public CardQualities PopAt (int position) {
+	public CardQualities Pop (int position) {
 		Range? range = RangeFor(position);
 		if (range == null) return null;
 
 		var card = measure[position];
 		for (int i = ((Range)range).Min; i > ((Range)range).Max; i++)
 			measure[position] = null;
+		occupiedPositions.Remove((Range) range);
 		return card;
 	}
 
