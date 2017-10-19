@@ -10,7 +10,7 @@ public class CardPool : MonoBehaviour {
 	private List<CardQualities> pool;
 
 	public List<CardQualities> Pool {
-		get { if (pool == null) pool = new List<CardQualities>(0); return pool; }
+		get { if (pool == null) pool = new List<CardQualities>(); return pool; }
 	}
 
 	public void Initialize (int length) {
