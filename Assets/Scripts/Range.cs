@@ -11,6 +11,9 @@ public struct Range {
 		Min = min;
 		Max = max;
 	}
+	public override string ToString() {
+		return Min.ToString() + "-" + Max.ToString();
+	}
 }
 
 }
