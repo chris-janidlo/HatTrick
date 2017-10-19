@@ -6,8 +6,8 @@ namespace HatTrick {
 [System.Serializable]
 public class CardQualities {
 
-	public readonly Suit Suit;
-	public readonly int Rank;
+	public Suit Suit;
+	public int Rank;
 
 	public CardQualities (Suit suit, int rank) {
 		Suit = suit;
@@ -18,7 +18,7 @@ public class CardQualities {
 		return Rank + " of " + Suit;
 	}
 
-	public static CardQualities RandomCard (int rankMin, int rankMax) {
+	public static CardQualities RandomCard (int rankMax, int rankMin=1) {
 		int rank = Random.Range(rankMin, rankMax + 1);
 		Suit suit = Suit.RandomSuit();
 		return new CardQualities(suit, rank);
