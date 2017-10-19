@@ -16,7 +16,7 @@ public enum SuitColor {
 //Suit is almost like an enum: there are only 7 possible values accessible from the outside, which are the properties at the end of the definition
 //it isn't an enum, however, in that each value is a struct with three publically accessible values
 [System.Serializable]
-public struct Suit {
+public class Suit {
 	public SuitColor root; //color of the chord where this note is the root
 	public SuitColor third; //color of the chord where this note is the third
 	public SuitColor fifth; //color of the chord where this note is the fifth

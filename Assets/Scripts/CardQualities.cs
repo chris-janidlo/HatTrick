@@ -4,7 +4,7 @@ namespace HatTrick {
 
 // simple container for card suit and rank (note and length)
 [System.Serializable]
-public struct CardQualities {
+public class CardQualities {
 
 	public Suit Suit;
 	public int Rank;
