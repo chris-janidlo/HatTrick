@@ -3,11 +3,10 @@
 namespace HatTrick {
 
 // simple container for card suit and rank (note and length)
-[System.Serializable]
 public class CardQualities {
 
-	public Suit Suit;
-	public int Rank;
+	public Suit Suit { get; private set; }
+	public int Rank { get; private set; }
 
 	public CardQualities (Suit suit, int rank) {
 		Suit = suit;
