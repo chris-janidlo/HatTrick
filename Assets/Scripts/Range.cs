@@ -14,6 +14,9 @@ public struct Range {
 	public override string ToString() {
 		return Min.ToString() + "-" + Max.ToString();
 	}
+	public override int GetHashCode () {
+		return ToString().GetHashCode();
+	}
 }
 
 }

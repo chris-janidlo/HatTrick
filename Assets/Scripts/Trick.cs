@@ -22,8 +22,7 @@ public class Trick : MonoBehaviour {
 
 	public void Initialize (int length) {
 		measure = new CardQualities[length];
-		for (int i = 0; i < length; i++)
-			measure[i] = null;
+		occupiedPositions = new Dictionary<Range, CardQualities>();
 	}
 
 	/// Tries to add card to the trick at position.
