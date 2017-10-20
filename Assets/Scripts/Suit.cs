@@ -28,7 +28,7 @@ public class Suit {
 		get { return (SuitColor) ((((int) Label) - 4) % 7); }
 	}
 
-	private Suit (SuitName label) {
+	public Suit (SuitName label) {
 		Label = label;
 	}
 
