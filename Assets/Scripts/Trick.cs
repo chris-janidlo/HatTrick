@@ -11,7 +11,10 @@ namespace HatTrick {
 public class Trick : MonoBehaviour {
 
 	public ReadOnlyDictionary<Range, CardQualities> OccupiedPositions {
-		get { return new ReadOnlyDictionary<Range, CardQualities>(occupiedPositions); }
+		get { 
+			if (occupiedPositions == null) return null;
+			return new ReadOnlyDictionary<Range, CardQualities>(occupiedPositions);
+		}
 	}
 
 	private CardQualities[] measure; // each position here holds the corresponding card in pool, for however long it is, or null
@@ -20,7 +23,7 @@ public class Trick : MonoBehaviour {
 	public void Initialize (int length) {
 		measure = new CardQualities[length];
 		for (int i = 0; i < length; i++)
-			measure[length] = null;
+			measure[i] = null;
 	}
 
 	/// Tries to add card to the trick at position.

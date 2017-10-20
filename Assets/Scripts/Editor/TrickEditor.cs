@@ -9,8 +9,11 @@ public class TrickEditor : Editor {
 	public override void OnInspectorGUI () {
 		var trick = (Trick) target;
 
-		foreach (var entry in trick.OccupiedPositions)
-			EditorGUILayout.LabelField(entry.Key.ToString(), entry.Value.ToString());
+		if (trick.OccupiedPositions != null)
+			foreach (var entry in trick.OccupiedPositions)
+				EditorGUILayout.LabelField(entry.Key.ToString(), entry.Value.ToString());
+		else
+			EditorGUILayout.LabelField("not initialized");
 	}
 
 }
