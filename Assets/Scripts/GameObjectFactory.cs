@@ -18,9 +18,9 @@ public static class GameObjectFactory {
 		}
 	}
 
-	public static GameObject NewTrick (int length) {
-		GameObject newTrick = GameObject.Instantiate(trickObject);
-		newTrick.GetComponent<Trick>().Initialize(length);
+	public static Trick NewTrick (int length) {
+		Trick newTrick = GameObject.Instantiate(trickObject).GetComponent<Trick>();
+		newTrick.Initialize(length);
 		return newTrick;
 	}
 
